@@ -4,7 +4,7 @@ name: Create Daily Standup Discussions
 
 on:
   schedule:
-    - cron:  '53 13 * * MON-FRI' # Runs M-F at 1:35pm
+    - cron:  '03 14 * * MON-FRI' # Runs M-F at 1:35pm
 
 jobs:
   create_discussions:
