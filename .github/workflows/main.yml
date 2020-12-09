@@ -4,7 +4,7 @@ name: Create Daily Standup Discussions
 
 on:
   schedule:
-    - cron:  '08 14 * * MON-FRI' # Runs M-F at 1:35pm
+    - cron:  '12 14 * * MON-FRI' # Runs M-F at 1:35pm
 
 jobs:
   create_discussions:
@@ -16,3 +16,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_ORGANIZATION_TOKEN }}
         with:
           organization: "CSE-110-Test-Team"
+          team_slugs: "me"
