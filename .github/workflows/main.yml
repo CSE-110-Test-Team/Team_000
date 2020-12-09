@@ -1,0 +1,19 @@
+# This is the workflow for create-standup-discussions
+
+name: Create Daily Standup Discussions
+
+on:
+  schedule:
+    - cron:  '0 35 13 ? * MON-FRI' # Runs M-F at 1:35pm
+
+jobs:
+  create_discussions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: MLH-Fellowship/create-standup-discussions@v1.x
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_ORGANIZATION_TOKEN }}
+        with:
+          organization: "MLH-Fellowship"
+          team_slugs: "team-1, team-2"
